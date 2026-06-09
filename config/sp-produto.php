@@ -38,6 +38,7 @@ return [
         'queue' => [
             'real_estate_developments' => env('RABBITMQ_QUEUE_REAL_ESTATE_DEVELOPMENTS'),
         ],
+        'use_ssl' => env('RABBITMQ_USE_SSL', true),
     ],
 
     'sync_relations' => [
