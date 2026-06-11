@@ -40,7 +40,7 @@ class Mirror extends BaseModel
      */
     public const MIRROR_TYPES = [
         'horizontal' => 'Horizontal',
-        'vertical' => 'Vertical',
+        'vertical'   => 'Vertical',
     ];
 
     /**

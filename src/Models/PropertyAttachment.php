@@ -34,7 +34,7 @@ class PropertyAttachment extends BaseModel
         parent::boot();
 
         self::saving(function ($model) {
-            $model->format = (new ExtensionMimeTypeDetector)->detectMimeTypeFromPath(strtok($model->url, '?'));
+            $model->format = (new ExtensionMimeTypeDetector())->detectMimeTypeFromPath(strtok($model->url, '?'));
         });
     }
 

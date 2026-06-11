@@ -11,8 +11,8 @@ trait EnvironmentHelper
         Environment::updateOrCreate([
             'uuid' => $message->uuid,
         ], [
-            'uuid' => $message->uuid,
-            'name' => $message->name,
+            'uuid'       => $message->uuid,
+            'name'       => $message->name,
             'created_at' => $message->created_at,
             'updated_at' => $message->updated_at,
         ]);

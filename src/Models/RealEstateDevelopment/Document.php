@@ -22,7 +22,7 @@ class Document extends BaseModel
      * @const array
      */
     public const TYPE_LIST = [
-        'others' => 'Outros',
+        'others'               => 'Outros',
         'descriptive_memorial' => 'Memorial Descritivo',
     ];
 

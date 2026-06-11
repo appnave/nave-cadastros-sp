@@ -27,9 +27,9 @@ class Attribute extends BaseModel
     }
 
     public const ADDITION_TYPE = [
-        'fixed_value' => 'Valor fixo',
+        'fixed_value'    => 'Valor fixo',
         'addition_value' => 'Acréscimo de valor',
-        'percentage' => 'Percentual',
+        'percentage'     => 'Percentual',
     ];
 
     protected $fillable = [

@@ -61,7 +61,7 @@ trait SyncTables
             'Accessories',
             [
                 'hub_company' => HubCompany::class,
-                'category' => AccessoryCategory::class,
+                'category'    => AccessoryCategory::class,
             ],
             ['created_at', 'updated_at', 'deleted_at']
         );
@@ -170,9 +170,9 @@ trait SyncTables
             RealEstateDevelopment::class,
             'Real Estate Developments',
             [
-                'hub_company' => HubCompany::class,
+                'hub_company'                    => HubCompany::class,
                 'hub_company_real_estate_agency' => HubCompany::class,
-                'hub_brand' => HubBrand::class,
+                'hub_brand'                      => HubBrand::class,
             ],
             ['created_at', 'updated_at', 'deleted_at']
         );
@@ -279,7 +279,7 @@ trait SyncTables
             'Characteristics',
             [
                 'real_estate_development' => RealEstateDevelopment::class,
-                'characteristic' => Characteristic::class,
+                'characteristic'          => Characteristic::class,
             ],
             ['created_at', 'updated_at', 'deleted_at']
         );
@@ -298,7 +298,7 @@ trait SyncTables
             'Typologies',
             [
                 'real_estate_development' => RealEstateDevelopment::class,
-                'proposal_model' => ProposalModel::class,
+                'proposal_model'          => ProposalModel::class,
             ],
             ['created_at', 'updated_at', 'deleted_at']
         );
@@ -318,8 +318,8 @@ trait SyncTables
             'Accessories for Real Estate Development',
             [
                 'real_estate_development' => RealEstateDevelopment::class,
-                'accessory_category' => AccessoryCategory::class,
-                'accessory' => Accessory::class,
+                'accessory_category'      => AccessoryCategory::class,
+                'accessory'               => Accessory::class,
             ],
             ['created_at', 'updated_at', 'deleted_at', 'start_at', 'end_at']
         );
@@ -338,7 +338,7 @@ trait SyncTables
             'Parameters',
             [
                 'real_estate_development' => RealEstateDevelopment::class,
-                'buying_option' => BuyingOption::class,
+                'buying_option'           => BuyingOption::class,
             ],
             [
                 'created_at',
@@ -370,7 +370,7 @@ trait SyncTables
             'Mirrors for Real Estate Development',
             [
                 'real_estate_development' => RealEstateDevelopment::class,
-                'parameter' => RealEstateDevelopment\Parameter::class,
+                'parameter'               => RealEstateDevelopment\Parameter::class,
             ],
             ['created_at', 'updated_at', 'deleted_at']
         );
@@ -510,10 +510,10 @@ trait SyncTables
             'Units for Real Estate Development',
             [
                 'real_estate_development' => RealEstateDevelopment::class,
-                'typology' => RealEstateDevelopment\Typology::class,
-                'mirror' => RealEstateDevelopment\Mirror::class,
-                'mirror_group' => RealEstateDevelopment\MirrorGroup::class,
-                'blueprint' => RealEstateDevelopment\Blueprint::class,
+                'typology'                => RealEstateDevelopment\Typology::class,
+                'mirror'                  => RealEstateDevelopment\Mirror::class,
+                'mirror_group'            => RealEstateDevelopment\MirrorGroup::class,
+                'blueprint'               => RealEstateDevelopment\Blueprint::class,
             ],
             ['created_at', 'updated_at', 'deleted_at', 'ready_to_live_in']
         );

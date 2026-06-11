@@ -12,9 +12,9 @@ trait CategoriesHelper
         AccessoryCategory::updateOrCreate([
             'uuid' => $message->uuid,
         ], [
-            'uuid' => $message->uuid,
-            'name' => $message->name,
-            'description' => $message->description,
+            'uuid'           => $message->uuid,
+            'name'           => $message->name,
+            'description'    => $message->description,
             'hub_company_id' => $this->hubCompanyId($message),
         ]);
     }

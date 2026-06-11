@@ -59,9 +59,9 @@ class Stage extends BaseModel
      */
     protected $casts = [
         'foundation' => 'integer',
-        'masonry' => 'integer',
-        'structure' => 'integer',
-        'finishing' => 'integer',
+        'masonry'    => 'integer',
+        'structure'  => 'integer',
+        'finishing'  => 'integer',
     ];
 
     public function realEstateDevelopment(): BelongsTo

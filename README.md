@@ -1,111 +1,109 @@
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/bildvitta/sp-produto.svg?style=flat-square)](https://packagist.org/packages/bildvitta/sp-produto)
-[![Total Downloads](https://img.shields.io/packagist/dt/bildvitta/sp-produto.svg?style=flat-square)](https://packagist.org/packages/bildvitta/sp-produto)
+# Nave Cadastros SP
 
-## Introduction
+## Visão geral
 
-The SP (Space Probe) package is responsible for collecting remote data updates for the module, keeping the data structure similar as possible, through the message broker.
+Pacote privado Laravel para sincronização e importação de dados do módulo **SP Produto**.
 
-## Installation
+Ele é consumido por outros projetos Laravel via Composer, usando repositório VCS privado.
 
-You can install the package via composer:
+## Requisitos
 
-```bash 
-composer require bildvitta/sp-produto
+- PHP `^8.1 || ^8.2 || ^8.3`
+- Laravel `8.x` a `12.x`
+- Composer 2
+- Acesso ao repositório privado do pacote e de suas dependências privadas
+- RabbitMQ e banco de dados configurados no projeto cliente
+
+## Acesso a repositórios privados
+
+No projeto cliente, adicione o repositório VCS no `composer.json`:
+
+```json
+{
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/appnave/nave-cadastros-sp"
+    }
+  ]
+}
 ```
 
-For everything to work perfectly in addition to having the settings file published in your application, run the command below:
+Instale o pacote:
 
 ```bash
+composer require appnave/nave-cadastros-sp
+```
+
+Se o pacote ou alguma dependência privada estiver em GitHub, autentique o Composer localmente:
+
+```bash
+composer config -g github-oauth.github.com <YOUR_TOKEN>
+```
+
+No GitHub Actions, use `COMPOSER_AUTH`:
+
+```yaml
+env:
+  COMPOSER_AUTH: '{"github-oauth":{"github.com":"${{ secrets.GH_TOKEN }}"}}'
+```
+
+## Instalação local
+
+No projeto cliente:
+
+```bash
+composer require appnave/nave-cadastros-sp
 php artisan sp-produto:config
-```
-
-## Configuration
-
-This is the contents of the published config file:
-
-```php
-
-use BildVitta\Hub\Entities\HubCompany;
-
-return [
-    'table_prefix' => env('MS_SP_PRODUTO_TABLE_PREFIX', 'produto_'),
-
-    'model_company' => env('MS_SP_PRODUTO_COMPANY', HubCompany::class),
-
-    'db' => [
-        'host' => env('PRODUTO_DB_HOST'),
-        'port' => env('PRODUTO_DB_PORT'),
-        'database' => env('PRODUTO_DB_DATABASE'),
-        'username' => env('PRODUTO_DB_USERNAME'),
-        'password' => env('PRODUTO_DB_PASSWORD'),
-    ],
-
-    'rabbitmq' => [
-        'host' => env('RABBITMQ_HOST'),
-        'port' => env('RABBITMQ_PORT'),
-        'user' => env('RABBITMQ_USER'),
-        'password' => env('RABBITMQ_PASSWORD'),
-        'virtualhost' => env('RABBITMQ_VIRTUALHOST', '/'),
-        'exchange' => [
-            'real_estate_developments' => env('RABBITMQ_EXCHANGE_REAL_ESTATE_DEVELOPMENTS', 'real_estate_developments'),
-        ],
-        'queue' => [
-            'real_estate_developments' => env('RABBITMQ_QUEUE_REAL_ESTATE_DEVELOPMENTS'),
-        ]
-    ],
-
-    'sync_relations' => [
-        'buying_options',
-        'parameters', // need buying_options
-        'insurances',
-        'accessories',
-        'mirrors', // need parameters
-        'blueprints', // need typologies, accessories
-        'characteristics',
-        'proposal_models',
-        'stages',
-        'typologies', // need proposal_models
-        'units', // need typologies, blueprints, mirrors 
-        'documents',
-        'media',
-        'properties',
-    ],
-];
-```
-
-Remove the relationships that you do not want to use, in order not to create the related tables, in the configuration file.
-
-Some relationships require other relationships, indicated in the comments.
-
-Run the command to install migrations and run seeds.
-
-```bash
 php artisan sp-produto:install
 ```
 
-If you want to add some relationship later, add it to the settings array and run the above command again.
+O comando `sp-produto:config` publica `config/sp-produto.php`.
+O comando `sp-produto:install` publica as migrations e, se confirmado, executa migrations e seeders.
 
+## Variáveis de ambiente
 
-## Importing data
+Configure, no mínimo, estas variáveis no projeto cliente:
 
-You can import initial data from the parent module by setting the database connection data in the configuration file. However, it will be necessary to import the data from the dependent module first: sp-hub.
+```env
+MS_SP_PRODUTO_TABLE_PREFIX=produto_
+MS_SP_PRODUTO_COMPANY=BildVitta\Hub\Entities\HubCompany
 
-```bash
-php artisan dataimport:produto_real_estate_developments
+PRODUTO_DB_HOST=
+PRODUTO_DB_PORT=
+PRODUTO_DB_DATABASE=
+PRODUTO_DB_USERNAME=
+PRODUTO_DB_PASSWORD=
+
+RABBITMQ_ACTIVE=true
+RABBITMQ_HOST=
+RABBITMQ_PORT=
+RABBITMQ_USER=
+RABBITMQ_PASSWORD=
+RABBITMQ_VIRTUALHOST=/
+RABBITMQ_USE_SSL=true
+RABBITMQ_EXCHANGE_REAL_ESTATE_DEVELOPMENTS=real_estate_developments
+RABBITMQ_QUEUE_REAL_ESTATE_DEVELOPMENTS=
+RABBITMQ_EVENT_REAL_ESTATE_DEVELOPMENT_UPDATED=false
 ```
 
-## Database seeder
-
-You can seed your database with fake data to work with. However, it will be necessary to seed the other dependency first: sp-hub.
+## Comandos úteis
 
 ```bash
+php artisan sp-produto:config
+php artisan sp-produto:install
+php artisan sp-produto:configure
+php artisan dataimport:produto_real_estate_developments --select=500 --offset=0 --table=0
+php artisan dataimport:produto_properties --select=500 --offset=0 --table=0
+php artisan rabbitmqworker:real_estate_developments
 php artisan db:seed --class=SpProdutoSeeder
 ```
 
-## Running the worker
+## Convenções
 
-After setting the message broker access data in the configuration file, you can run the worker to keep the data up to date.
+- O pacote publica o provider `BildVitta\SpProduto\SpProdutoServiceProvider` via auto-discovery do Laravel.
+- O alias disponível é `MessagesCrm`.
+- O helper global `prefixTableName()` usa o prefixo definido em `MS_SP_PRODUTO_TABLE_PREFIX`.
+- A lista de relações sincronizadas pode ser ajustada em `config/sp-produto.php` antes de rodar as migrations.
+- O comando `sp-produto:configure` só executa se `RABBITMQ_ACTIVE=true`.
 
-```bash
-php artisan rabbitmqworker:real_estate_developments
-```

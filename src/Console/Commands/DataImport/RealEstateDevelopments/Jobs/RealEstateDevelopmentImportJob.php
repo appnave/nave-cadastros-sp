@@ -202,9 +202,9 @@ class RealEstateDevelopmentImportJob implements ShouldQueue
         }
         $worker->error = [
             'message' => $exception->getMessage(),
-            'file' => $exception->getFile(),
-            'line' => $exception->getLine(),
-            'trace' => $exception->getTraceAsString(),
+            'file'    => $exception->getFile(),
+            'line'    => $exception->getLine(),
+            'trace'   => $exception->getTraceAsString(),
         ];
         $worker->status = 'error';
         $worker->save();

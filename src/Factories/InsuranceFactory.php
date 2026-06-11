@@ -20,11 +20,11 @@ class InsuranceFactory extends Factory
     public function definition(): array
     {
         return [
-            'uuid' => $this->faker->uuid(),
-            'name' => $this->faker->words(5, true),
-            'rate' => $this->faker->numberBetween(0, 100),
+            'uuid'          => $this->faker->uuid(),
+            'name'          => $this->faker->words(5, true),
+            'rate'          => $this->faker->numberBetween(0, 100),
             'external_code' => $this->faker->numerify('#######'),
-            'is_active' => $this->faker->boolean(),
+            'is_active'     => $this->faker->boolean(),
         ];
     }
 }

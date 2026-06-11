@@ -32,7 +32,7 @@ class Typology extends BaseModel
     ];
 
     protected $casts = [
-        'itbi_value' => 'decimal:2',
+        'itbi_value'      => 'decimal:2',
         'appraisal_value' => 'decimal:2',
     ];
 

@@ -25,13 +25,13 @@ class DocumentFactory extends Factory
     public function definition(): array
     {
         return [
-            'uuid' => $this->faker->uuid(),
-            'name' => $this->faker->words(3, true),
+            'uuid'        => $this->faker->uuid(),
+            'name'        => $this->faker->words(3, true),
             'description' => $this->faker->text(300),
-            'format' => $this->faker->fileExtension,
-            'url' => 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf?'.$this->faker->uuid,
-            'preview' => $this->faker->optional(0.8)->passthrough('https://placeimg.com/640/480/tech?'.$this->faker->uuid),
-            'active' => $this->faker->boolean,
+            'format'      => $this->faker->fileExtension,
+            'url'         => 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf?'.$this->faker->uuid,
+            'preview'     => $this->faker->optional(0.8)->passthrough('https://placeimg.com/640/480/tech?'.$this->faker->uuid),
+            'active'      => $this->faker->boolean,
         ];
     }
 }

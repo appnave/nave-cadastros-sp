@@ -17,20 +17,20 @@ class Property extends BaseModel
     use SoftDeletes;
 
     public const KIND_LIST = [
-        'estates' => 'Imóvel',
+        'estates'    => 'Imóvel',
         'automobile' => 'Automóvel',
-        'other' => 'Outro',
+        'other'      => 'Outro',
     ];
 
     public const ESTATE_TYPE_LIST = [
-        'house' => 'Casa',
-        'apartment' => 'Apartamento',
+        'house'      => 'Casa',
+        'apartment'  => 'Apartamento',
         'commercial' => 'Comercial',
-        'rural' => 'Rural',
+        'rural'      => 'Rural',
     ];
 
     public const PROPERTY_CONDITION = [
-        'new' => 'Novo',
+        'new'  => 'Novo',
         'used' => 'Usado',
     ];
 
@@ -40,53 +40,53 @@ class Property extends BaseModel
     ];
 
     public const AUTOMOBILE_TYPE_LIST = [
-        'car' => 'Carro',
+        'car'  => 'Carro',
         'bike' => 'Moto',
     ];
 
     public const FUEL_LIST = [
-        'flex' => 'Flex',
-        'gas' => 'Gasolina',
+        'flex'    => 'Flex',
+        'gas'     => 'Gasolina',
         'ethanol' => 'Etanol',
-        'diesel' => 'Diesel',
+        'diesel'  => 'Diesel',
     ];
 
     public const BASE_COLOR_LIST = [
-        'white' => 'Branco',
-        'black' => 'Preto',
+        'white'  => 'Branco',
+        'black'  => 'Preto',
         'silver' => 'Prata',
-        'blue' => 'Azul',
-        'red' => 'Vermelho',
+        'blue'   => 'Azul',
+        'red'    => 'Vermelho',
     ];
 
     public const IPTU_PAYMENT_CONDITION = [
         'monthly' => 'Mensal',
-        'yearly' => 'Anual',
-        'free' => 'Isento',
+        'yearly'  => 'Anual',
+        'free'    => 'Isento',
     ];
 
     public const PROPERTY_STANDARD = [
-        'high' => 'Alto',
-        'low' => 'Baixo',
+        'high'    => 'Alto',
+        'low'     => 'Baixo',
         'average' => 'Médio',
         'regular' => 'Regular',
     ];
 
     public const LOCATION_STANDARD = [
         'privileged' => 'Privilegiada',
-        'excellent' => 'Ótima',
-        'average' => 'Média',
-        'regular' => 'Regular',
-        'good' => 'Boa',
+        'excellent'  => 'Ótima',
+        'average'    => 'Média',
+        'regular'    => 'Regular',
+        'good'       => 'Boa',
     ];
 
     public const PROPERTY_PURPOSE = [
         'residential' => 'Residencial',
-        'commercial' => 'Commercial',
-        'industrial' => 'Industrial',
-        'rural' => 'Rural',
-        'season' => 'Temporada',
-        'corporate' => 'Corporativa',
+        'commercial'  => 'Commercial',
+        'industrial'  => 'Industrial',
+        'rural'       => 'Rural',
+        'season'      => 'Temporada',
+        'corporate'   => 'Corporativa',
     ];
 
     protected $fillable = [
@@ -144,11 +144,11 @@ class Property extends BaseModel
     ];
 
     protected $casts = [
-        'is_condominium' => 'boolean',
-        'is_rented' => 'boolean',
+        'is_condominium'               => 'boolean',
+        'is_rented'                    => 'boolean',
         'authorized_commercialization' => 'boolean',
-        'exclusivity' => 'boolean',
-        'accept_financing' => 'boolean',
+        'exclusivity'                  => 'boolean',
+        'accept_financing'             => 'boolean',
     ];
 
     public function __construct(array $attributes = [])

@@ -21,11 +21,11 @@ class PersonalizationFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->words(5, true),
-            'value' => 1,
-            'description' => $this->faker->text(),
+            'name'                       => $this->faker->words(5, true),
+            'value'                      => 1,
+            'description'                => $this->faker->text(),
             'real_estate_development_id' => RealEstateDevelopment::factory(),
-            'is_active' => true,
+            'is_active'                  => true,
         ];
     }
 

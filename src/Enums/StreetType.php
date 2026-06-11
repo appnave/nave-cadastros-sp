@@ -63,13 +63,13 @@ enum StreetType: string
     public function getLabel(): ?string
     {
         return match ($this) {
-            self::STREET => __('street'),
-            self::AVENUE => __('avenue'),
-            self::ALLEY => __('alley'),
-            self::ROAD => __('road'),
-            self::PLAZA => __('plaza'),
+            self::STREET  => __('street'),
+            self::AVENUE  => __('avenue'),
+            self::ALLEY   => __('alley'),
+            self::ROAD    => __('road'),
+            self::PLAZA   => __('plaza'),
             self::HIGHWAY => __('highway'),
-            self::LANE => __('lane'),
+            self::LANE    => __('lane'),
         };
     }
 }

@@ -42,7 +42,7 @@ trait SyncRelated
                 if ($modelObject && $foreignObject) {
                     DB::table(prefixTableName($pivot))
                         ->insert([
-                            sprintf('%s_id', $model['field']) => $modelObject->id,
+                            sprintf('%s_id', $model['field'])   => $modelObject->id,
                             sprintf('%s_id', $foreign['field']) => $foreignObject->id,
                         ]);
                 }

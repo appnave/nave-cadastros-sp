@@ -31,27 +31,27 @@ class ProposalModelPeriodicities extends BaseModel
     }
 
     public const PERIODICITY_LIST = [
-        'financing' => 'Financiamento',
-        'fgts' => 'FGTS',
-        'subsidy' => 'Subsídio',
-        'down_payment' => 'Entrada',
-        'intermediate' => 'Intermediária',
-        'post_construction' => 'Pós-obra',
-        'monthly' => 'Mensal',
-        'bimonthly' => 'Bimestral',
-        'quarterly' => 'Trimestral',
-        'semiannual' => 'Semestral',
-        'yearly' => 'Anual',
+        'financing'          => 'Financiamento',
+        'fgts'               => 'FGTS',
+        'subsidy'            => 'Subsídio',
+        'down_payment'       => 'Entrada',
+        'intermediate'       => 'Intermediária',
+        'post_construction'  => 'Pós-obra',
+        'monthly'            => 'Mensal',
+        'bimonthly'          => 'Bimestral',
+        'quarterly'          => 'Trimestral',
+        'semiannual'         => 'Semestral',
+        'yearly'             => 'Anual',
         'conclusion_balance' => 'Saldo Conclusão',
-        'final' => 'Final',
-        'conclusion_keys' => 'Conclusão Chaves',
+        'final'              => 'Final',
+        'conclusion_keys'    => 'Conclusão Chaves',
 
         // vendas
-        'signal' => 'Sinal',
-        'periodicity' => 'Periodicidade',
-        'single' => 'Única',
-        'single_financing' => 'Única - Financiamento',
-        'vehicle_exchange' => 'Dação em pagamento - Veículo',
+        'signal'                           => 'Sinal',
+        'periodicity'                      => 'Periodicidade',
+        'single'                           => 'Única',
+        'single_financing'                 => 'Única - Financiamento',
+        'vehicle_exchange'                 => 'Dação em pagamento - Veículo',
         'real_estate_development_exchange' => 'Dação em pagamento - Imóvel',
     ];
 
@@ -62,8 +62,8 @@ class ProposalModelPeriodicities extends BaseModel
         // 'construction_start_in' => 'Data de início da obra',
         // 'financial_transfer_deadline' => 'Data limite para repasse',
         // 'launch_in' => 'Data de lançamento',
-        'pre_launch_in' => 'Data de breve lançamento',
-        'ready_to_live_in' => 'Data de entrega real',
+        'pre_launch_in'     => 'Data de breve lançamento',
+        'ready_to_live_in'  => 'Data de entrega real',
         'hand_over_keys_in' => 'Data de entrega das chaves',
 
         'vmd_in' => 'Valor Minimo de Desligamento',
@@ -74,7 +74,7 @@ class ProposalModelPeriodicities extends BaseModel
      */
     public const ADD_ON_TYPE_LIST = [
         'fixed_value' => 'Valor fixo',
-        'percentage' => 'Porcentagem',
+        'percentage'  => 'Porcentagem',
     ];
 
     /**
@@ -106,8 +106,8 @@ class ProposalModelPeriodicities extends BaseModel
      */
     protected $casts = [
         'update_installments_quantity' => 'boolean',
-        'pin_value' => 'boolean',
-        'editable' => 'boolean',
+        'pin_value'                    => 'boolean',
+        'editable'                     => 'boolean',
     ];
 
     public function proposalModel(): BelongsTo

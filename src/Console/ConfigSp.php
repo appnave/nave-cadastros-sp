@@ -15,7 +15,7 @@ class ConfigSp extends Command
      */
     private const VENDOR_PUBLISH_CONFIG_PARAMS = [
         '--provider' => SpProdutoServiceProvider::class,
-        '--tag' => 'sp-produto-config',
+        '--tag'      => 'sp-produto-config',
     ];
 
     /**

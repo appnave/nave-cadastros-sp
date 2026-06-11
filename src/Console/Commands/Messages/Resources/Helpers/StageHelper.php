@@ -17,13 +17,13 @@ trait StageHelper
             $stage = Stage::updateOrCreate([
                 'uuid' => $messageStage->uuid,
             ], [
-                'uuid' => $messageStage->uuid,
-                'name' => $messageStage->name,
-                'registered_at' => Carbon::create($messageStage->registered_at),
-                'foundation' => $messageStage->foundation,
-                'masonry' => $messageStage->masonry,
-                'structure' => $messageStage->structure,
-                'finishing' => $messageStage->finishing,
+                'uuid'                       => $messageStage->uuid,
+                'name'                       => $messageStage->name,
+                'registered_at'              => Carbon::create($messageStage->registered_at),
+                'foundation'                 => $messageStage->foundation,
+                'masonry'                    => $messageStage->masonry,
+                'structure'                  => $messageStage->structure,
+                'finishing'                  => $messageStage->finishing,
                 'real_estate_development_id' => $realEstateDevelopment->id,
             ]);
             $this->stageImages($stage, $messageStage->images);
@@ -44,10 +44,10 @@ trait StageHelper
             $stageImage = StageImage::updateOrCreate([
                 'uuid' => $messageStageImage->uuid,
             ], [
-                'uuid' => $messageStageImage->uuid,
-                'name' => $messageStageImage->name,
-                'format' => $messageStageImage->format,
-                'image' => $messageStageImage->image,
+                'uuid'     => $messageStageImage->uuid,
+                'name'     => $messageStageImage->name,
+                'format'   => $messageStageImage->format,
+                'image'    => $messageStageImage->image,
                 'stage_id' => $stage->id,
             ]);
             $stageImageIds[] = $stageImage->id;

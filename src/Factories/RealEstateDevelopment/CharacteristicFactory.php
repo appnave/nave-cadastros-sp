@@ -23,10 +23,10 @@ class CharacteristicFactory extends Factory
     public function definition(): array
     {
         return [
-            'uuid' => $this->faker->uuid(),
-            'order' => rand(1, 20),
+            'uuid'         => $this->faker->uuid(),
+            'order'        => rand(1, 20),
             'differential' => $this->faker->boolean,
-            'description' => $this->faker->text,
+            'description'  => $this->faker->text,
         ];
     }
 }

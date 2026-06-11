@@ -16,13 +16,13 @@ trait PersonalizationHelper
         $document = Personalization::updateOrCreate([
             'uuid' => $message->uuid,
         ], [
-            'is_active' => $message->is_active,
-            'name' => $message->name,
-            'value' => $message->value,
+            'is_active'                  => $message->is_active,
+            'name'                       => $message->name,
+            'value'                      => $message->value,
             'real_estate_development_id' => $realEstateDevelopment->id,
-            'description' => $message->description,
-            'created_at' => $message->created_at,
-            'updated_at' => $message->updated_at,
+            'description'                => $message->description,
+            'created_at'                 => $message->created_at,
+            'updated_at'                 => $message->updated_at,
         ]);
 
         $document->environments()->sync($environments);

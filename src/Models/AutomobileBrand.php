@@ -14,7 +14,7 @@ class AutomobileBrand extends BaseModel
     use SoftDeletes;
 
     public const AUTO_TYPES = [
-        'car' => 'Carro',
+        'car'  => 'Carro',
         'bike' => 'Moto',
     ];
 
