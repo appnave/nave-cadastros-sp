@@ -23,8 +23,8 @@ class MirrorFactory extends Factory
     public function definition(): array
     {
         return [
-            'uuid' => $this->faker->uuid(),
-            'name' => $this->faker->words(5, true),
+            'uuid'        => $this->faker->uuid(),
+            'name'        => $this->faker->words(5, true),
             'mirror_type' => $this->faker->randomKey(Mirror::MIRROR_TYPES),
         ];
     }

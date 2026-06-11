@@ -35,21 +35,21 @@ class Parameter extends BaseModel
     }
 
     public const COMMERCIALIZATION_STATUS_LIST = [
-        'holding' => 'Aguardando',
-        'in_commercialization' => 'Em comercialização',
+        'holding'                  => 'Aguardando',
+        'in_commercialization'     => 'Em comercialização',
         'ready_to_commercializate' => 'Pronto para comercialização',
     ];
 
     public const FINANCIAL_TRANSFER_STATUS_LIST = [
-        'holding' => 'Aguardando',
+        'holding'     => 'Aguardando',
         'in_transfer' => 'Em repasse',
     ];
 
     public const STEPS_LIST = [
-        'pre_launch' => 'Pré-lançamento',
-        'launch' => 'Lançamento',
+        'pre_launch'         => 'Pré-lançamento',
+        'launch'             => 'Lançamento',
         'under_construction' => 'Em construção',
-        'ready_to_live' => 'Pronto para viver',
+        'ready_to_live'      => 'Pronto para viver',
     ];
 
     public const VERGE_LIST = [
@@ -121,26 +121,26 @@ class Parameter extends BaseModel
      * @var array
      */
     protected $casts = [
-        'allow_commercialization' => 'boolean',
-        'in_financial_transfer' => 'boolean',
-        'verge_one' => 'float',
-        'verge_two' => 'float',
-        'verge_three' => 'float',
-        'verge_four' => 'float',
-        'verge_five' => 'float',
-        'commission_real_estate_broker' => 'float',
-        'commission_supervisor' => 'float',
-        'commission_manager' => 'float',
+        'allow_commercialization'         => 'boolean',
+        'in_financial_transfer'           => 'boolean',
+        'verge_one'                       => 'float',
+        'verge_two'                       => 'float',
+        'verge_three'                     => 'float',
+        'verge_four'                      => 'float',
+        'verge_five'                      => 'float',
+        'commission_real_estate_broker'   => 'float',
+        'commission_supervisor'           => 'float',
+        'commission_manager'              => 'float',
         'commission_external_real_estate' => 'float',
-        'blueprint_definition_deadline' => 'date',
-        'construction_over_in' => 'date',
-        'construction_prevision_in' => 'date',
-        'construction_start_in' => 'date',
-        'financial_transfer_deadline' => 'date',
-        'launch_in' => 'date',
-        'pre_launch_in' => 'date',
-        'ready_to_live_in' => 'date',
-        'hand_over_keys_in' => 'date',
+        'blueprint_definition_deadline'   => 'date',
+        'construction_over_in'            => 'date',
+        'construction_prevision_in'       => 'date',
+        'construction_start_in'           => 'date',
+        'financial_transfer_deadline'     => 'date',
+        'launch_in'                       => 'date',
+        'pre_launch_in'                   => 'date',
+        'ready_to_live_in'                => 'date',
+        'hand_over_keys_in'               => 'date',
     ];
 
     public function realEstateDevelopment(): BelongsTo

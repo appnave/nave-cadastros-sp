@@ -41,9 +41,9 @@ class Unit extends BaseModel
      */
     public const UNIT_TYPE_LIST = [
         'residential' => 'Residencial',
-        'commercial' => 'Comercial',
-        'garage' => 'Garagem',
-        'storage' => 'Armazém',
+        'commercial'  => 'Comercial',
+        'garage'      => 'Garagem',
+        'storage'     => 'Armazém',
     ];
 
     /**

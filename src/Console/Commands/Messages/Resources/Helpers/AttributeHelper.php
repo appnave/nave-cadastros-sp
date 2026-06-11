@@ -12,10 +12,10 @@ trait AttributeHelper
         Attribute::updateOrCreate([
             'uuid' => $message->uuid,
         ], [
-            'uuid' => $message->uuid,
-            'name' => $message->name,
-            'description' => $message->description,
-            'type_increase' => $message->type_increase,
+            'uuid'           => $message->uuid,
+            'name'           => $message->name,
+            'description'    => $message->description,
+            'type_increase'  => $message->type_increase,
             'value_increase' => $message->value_increase,
             'hub_company_id' => $this->hubCompanyId($message),
         ]);

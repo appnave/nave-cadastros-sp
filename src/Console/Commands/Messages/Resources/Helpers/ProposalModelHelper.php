@@ -25,8 +25,8 @@ trait ProposalModelHelper
         $proposalModel = ProposalModel::updateOrCreate([
             'uuid' => $message->uuid,
         ], [
-            'uuid' => $message->uuid,
-            'name' => $message->name,
+            'uuid'           => $message->uuid,
+            'name'           => $message->name,
             'hub_company_id' => $this->hubCompanyId($message),
         ]);
         $proposalModelPeriodicityIds = [];
@@ -34,17 +34,17 @@ trait ProposalModelHelper
             $proposalModelPeriodicity = ProposalModelPeriodicities::updateOrCreate([
                 'uuid' => $periodicity->uuid,
             ], [
-                'uuid' => $periodicity->uuid,
+                'uuid'                         => $periodicity->uuid,
                 'update_installments_quantity' => $periodicity->update_installments_quantity,
-                'installments' => $periodicity->installments,
-                'periodicity' => $periodicity->periodicity,
-                'pin_value' => $periodicity->pin_value,
-                'add_on_type' => $periodicity->add_on_type,
-                'add_on_value' => $periodicity->add_on_value,
-                'proposal_model_id' => $proposalModel->id,
-                'editable' => $periodicity->editable,
-                'due_date_type' => $periodicity->due_date_type,
-                'due_dates' => $periodicity->due_dates,
+                'installments'                 => $periodicity->installments,
+                'periodicity'                  => $periodicity->periodicity,
+                'pin_value'                    => $periodicity->pin_value,
+                'add_on_type'                  => $periodicity->add_on_type,
+                'add_on_value'                 => $periodicity->add_on_value,
+                'proposal_model_id'            => $proposalModel->id,
+                'editable'                     => $periodicity->editable,
+                'due_date_type'                => $periodicity->due_date_type,
+                'due_dates'                    => $periodicity->due_dates,
             ]);
             $proposalModelPeriodicityIds[] = $proposalModelPeriodicity->id;
         }

@@ -90,7 +90,7 @@ class InstallSp extends Command
     {
         $this->call('vendor:publish', [
             '--provider' => SpProdutoServiceProvider::class,
-            '--tag' => 'seeders',
+            '--tag'      => 'seeders',
         ]);
     }
 

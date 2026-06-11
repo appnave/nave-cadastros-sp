@@ -17,9 +17,9 @@ trait MirrorHelper
             $mirror = Mirror::updateOrCreate([
                 'uuid' => $messageMirror->uuid,
             ], [
-                'uuid' => $messageMirror->uuid,
-                'name' => $messageMirror->name,
-                'mirror_type' => $messageMirror->mirror_type,
+                'uuid'                       => $messageMirror->uuid,
+                'name'                       => $messageMirror->name,
+                'mirror_type'                => $messageMirror->mirror_type,
                 'real_estate_development_id' => $realEstateDevelopment->id,
             ]);
             $mirrorIds[] = $mirror->id;
@@ -28,8 +28,8 @@ trait MirrorHelper
                 $mirrorGroup = MirrorGroup::updateOrCreate([
                     'uuid' => $messageMirrorSubgroup->uuid,
                 ], [
-                    'uuid' => $messageMirrorSubgroup->uuid,
-                    'name' => $messageMirrorSubgroup->name,
+                    'uuid'      => $messageMirrorSubgroup->uuid,
+                    'name'      => $messageMirrorSubgroup->name,
                     'mirror_id' => $mirror->id,
                 ]);
                 $mirrorSubgroupIds[] = $mirrorGroup->id;

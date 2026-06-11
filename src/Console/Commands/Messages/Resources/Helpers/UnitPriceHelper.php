@@ -15,11 +15,11 @@ trait UnitPriceHelper
             $unit->prices()->updateOrCreate([
                 'uuid' => $unitPrice->uuid,
             ], [
-                'period' => $unitPrice->period,
+                'period'      => $unitPrice->period,
                 'fixed_price' => $unitPrice->fixed_price,
                 'table_price' => $unitPrice->table_price,
-                'created_at' => $unitPrice->created_at,
-                'updated_at' => $unitPrice->updated_at,
+                'created_at'  => $unitPrice->created_at,
+                'updated_at'  => $unitPrice->updated_at,
             ]);
         }
     }

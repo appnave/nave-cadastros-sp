@@ -8,7 +8,11 @@ use Illuminate\Queue\SerializesModels;
 
 class RealEstateDevelopmentUpdated
 {
-    use Dispatchable, InteractsWithSockets, SerializesModels;
+    use Dispatchable;
+    use InteractsWithSockets;
+    use SerializesModels;
 
-    public function __construct(public ?string $realEstateDevelopmentUuid) {}
+    public function __construct(public ?string $realEstateDevelopmentUuid)
+    {
+    }
 }

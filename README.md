@@ -1,5 +1,5 @@
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/bildvitta/sp-produto.svg?style=flat-square)](https://packagist.org/packages/bildvitta/sp-produto)
-[![Total Downloads](https://img.shields.io/packagist/dt/bildvitta/sp-produto.svg?style=flat-square)](https://packagist.org/packages/bildvitta/sp-produto)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/appnave/nave-cadastros-sp.svg?style=flat-square)](https://packagist.org/packages/appnave/nave-cadastros-sp)
+[![Total Downloads](https://img.shields.io/packagist/dt/appnave/nave-cadastros-sp.svg?style=flat-square)](https://packagist.org/packages/appnave/nave-cadastros-sp)
 
 ## Introduction
 
@@ -10,7 +10,7 @@ The SP (Space Probe) package is responsible for collecting remote data updates f
 You can install the package via composer:
 
 ```bash 
-composer require bildvitta/sp-produto
+composer require appnave/nave-cadastros-sp
 ```
 
 For everything to work perfectly in addition to having the settings file published in your application, run the command below:

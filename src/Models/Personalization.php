@@ -47,7 +47,7 @@ class Personalization extends BaseModel
 
     protected $casts = [
         'is_active' => 'boolean',
-        'value' => 'decimal:2',
+        'value'     => 'decimal:2',
     ];
 
     /**

@@ -46,16 +46,16 @@ class PropertiesImportCommand extends Command
             $tableIndex = (int) $optionTableIndex;
         }
 
-        $worker = new Worker;
+        $worker = new Worker();
         $worker->type = 'sp-produto.dataimport.properties';
         $worker->status = 'created';
         $worker->schedule = now();
         $worker->payload = [
-            'limit' => $selectLimit,
-            'offset' => $offset,
-            'total' => null,
+            'limit'       => $selectLimit,
+            'offset'      => $offset,
+            'total'       => null,
             'table_index' => $tableIndex,
-            'tables' => $this->getTables(),
+            'tables'      => $this->getTables(),
         ];
         $worker->save();
 

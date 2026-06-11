@@ -17,12 +17,12 @@ trait TypologyHelper
             $typology = Typology::updateOrCreate([
                 'uuid' => $messageTypology->uuid,
             ], [
-                'uuid' => $messageTypology->uuid,
+                'uuid'                       => $messageTypology->uuid,
                 'real_estate_development_id' => $realEstateDevelopment->id,
-                'name' => $messageTypology->name,
-                'extract_text' => $messageTypology->extract_text,
-                'itbi_value' => $messageTypology->itbi_value,
-                'appraisal_value' => $messageTypology->appraisal_value,
+                'name'                       => $messageTypology->name,
+                'extract_text'               => $messageTypology->extract_text,
+                'itbi_value'                 => $messageTypology->itbi_value,
+                'appraisal_value'            => $messageTypology->appraisal_value,
             ]);
             $typologyIds[] = $typology->id;
             $this->typologyProposalModel($typology, $messageTypology);
@@ -50,10 +50,10 @@ trait TypologyHelper
             $attribute = Attribute::updateOrCreate([
                 'uuid' => $messageAttribute->uuid,
             ], [
-                'uuid' => $messageAttribute->uuid,
-                'name' => $messageAttribute->name,
-                'description' => $messageAttribute->description,
-                'type_increase' => $messageAttribute->type_increase,
+                'uuid'           => $messageAttribute->uuid,
+                'name'           => $messageAttribute->name,
+                'description'    => $messageAttribute->description,
+                'type_increase'  => $messageAttribute->type_increase,
                 'value_increase' => $messageAttribute->value_increase,
                 'hub_company_id' => $this->hubCompanyId($messageAttribute),
             ]);

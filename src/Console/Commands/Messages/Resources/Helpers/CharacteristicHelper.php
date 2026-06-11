@@ -12,10 +12,10 @@ trait CharacteristicHelper
         Characteristic::updateOrCreate([
             'uuid' => $message->uuid,
         ], [
-            'uuid' => $message->uuid,
-            'name' => $message->name,
-            'description' => $message->description,
-            'icon' => $message->icon,
+            'uuid'           => $message->uuid,
+            'name'           => $message->name,
+            'description'    => $message->description,
+            'icon'           => $message->icon,
             'hub_company_id' => $this->hubCompanyId($message),
         ]);
     }

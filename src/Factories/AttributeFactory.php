@@ -20,10 +20,10 @@ class AttributeFactory extends Factory
     public function definition(): array
     {
         return [
-            'uuid' => $this->faker->uuid(),
-            'name' => $this->faker->words(5, true),
-            'description' => $this->faker->text(),
-            'type_increase' => $this->faker->randomKey(Attribute::ADDITION_TYPE),
+            'uuid'           => $this->faker->uuid(),
+            'name'           => $this->faker->words(5, true),
+            'description'    => $this->faker->text(),
+            'type_increase'  => $this->faker->randomKey(Attribute::ADDITION_TYPE),
             'value_increase' => $this->faker->randomFloat(2, 0, 9999),
         ];
     }

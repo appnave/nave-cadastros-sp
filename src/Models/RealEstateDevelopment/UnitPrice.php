@@ -62,7 +62,7 @@ class UnitPrice extends BaseModel
     ];
 
     protected $casts = [
-        'period' => 'date',
+        'period'      => 'date',
         'fixed_price' => 'decimal:3',
         'table_price' => 'decimal:3',
     ];

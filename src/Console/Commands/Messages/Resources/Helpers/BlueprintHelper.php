@@ -18,10 +18,10 @@ trait BlueprintHelper
             $blueprint = Blueprint::updateOrCreate([
                 'uuid' => $messageBlueprint->uuid,
             ], [
-                'uuid' => $messageBlueprint->uuid,
+                'uuid'                       => $messageBlueprint->uuid,
                 'real_estate_development_id' => $realEstateDevelopment->id,
-                'name' => $messageBlueprint->name,
-                'description' => $messageBlueprint->description,
+                'name'                       => $messageBlueprint->name,
+                'description'                => $messageBlueprint->description,
             ]);
             $blueprintIds[] = $blueprint->id;
             $this->blueprintImages($blueprint, $messageBlueprint->images);
@@ -43,11 +43,11 @@ trait BlueprintHelper
             $blueprintImage = BlueprintImage::updateOrCreate([
                 'uuid' => $messageBlueprintImage->uuid,
             ], [
-                'uuid' => $messageBlueprintImage->uuid,
+                'uuid'         => $messageBlueprintImage->uuid,
                 'blueprint_id' => $blueprint->id,
-                'name' => $messageBlueprintImage->name ?? '',
-                'image' => explode('?', $messageBlueprintImage->image)[0],
-                'format' => $messageBlueprintImage->format ?? '',
+                'name'         => $messageBlueprintImage->name ?? '',
+                'image'        => explode('?', $messageBlueprintImage->image)[0],
+                'format'       => $messageBlueprintImage->format ?? '',
             ]);
             $blueprintImageIds[] = $blueprintImage->id;
         }

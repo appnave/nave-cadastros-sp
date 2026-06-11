@@ -20,9 +20,9 @@ class CategoryFactory extends Factory
     public function definition(): array
     {
         return [
-            'uuid' => $this->faker->uuid(),
-            'name' => $this->faker->words(5, true),
-            'description' => $this->faker->text,
+            'uuid'           => $this->faker->uuid(),
+            'name'           => $this->faker->words(5, true),
+            'description'    => $this->faker->text,
             'hub_company_id' => config('sp-produto.model_company')::inRandomOrder()->first()?->id,
         ];
     }

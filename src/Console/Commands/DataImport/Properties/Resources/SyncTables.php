@@ -105,9 +105,9 @@ trait SyncTables
             'Properties',
             [
                 'hub_company' => HubCompany::class,
-                'brand' => AutomobileBrand::class,
-                'model' => AutomobileModel::class,
-                'version' => AutomobileVersion::class,
+                'brand'       => AutomobileBrand::class,
+                'model'       => AutomobileModel::class,
+                'version'     => AutomobileVersion::class,
             ],
             ['created_at', 'updated_at', 'deleted_at']
         );

@@ -15,21 +15,21 @@ trait RealEstateDevelopmentCharacteristicHelper
         $baseCharacteristic = BaseCharacteristic::updateOrCreate([
             'uuid' => $message->characteristic->uuid,
         ], [
-            'uuid' => $message->characteristic->uuid,
-            'name' => $message->characteristic->name,
-            'description' => $message->characteristic->description,
-            'icon' => $message->characteristic->icon,
+            'uuid'           => $message->characteristic->uuid,
+            'name'           => $message->characteristic->name,
+            'description'    => $message->characteristic->description,
+            'icon'           => $message->characteristic->icon,
             'hub_company_id' => $this->hubCompanyId($message->characteristic),
         ]);
         Characteristic::updateOrCreate([
             'uuid' => $message->uuid,
         ], [
-            'uuid' => $message->uuid,
+            'uuid'                       => $message->uuid,
             'real_estate_development_id' => $realEstateDevelopmentId,
-            'description' => $message->description,
-            'order' => $message->order,
-            'differential' => $message->differential,
-            'characteristic_id' => $baseCharacteristic->id,
+            'description'                => $message->description,
+            'order'                      => $message->order,
+            'differential'               => $message->differential,
+            'characteristic_id'          => $baseCharacteristic->id,
         ]);
     }
 

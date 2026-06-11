@@ -32,9 +32,9 @@ class RealEstateDevelopment extends BaseModel
     use SoftDeletes;
 
     public const STATUS_LIST = [
-        'incomplete_registration' => 'Cadastro incompleto',
+        'incomplete_registration'     => 'Cadastro incompleto',
         'ready_for_commercialization' => 'Pronto para comercialização',
-        'in_commercialization' => 'Em comercialização',
+        'in_commercialization'        => 'Em comercialização',
     ];
 
     /**
@@ -113,7 +113,7 @@ class RealEstateDevelopment extends BaseModel
      */
     protected static function booted()
     {
-        static::addGlobalScope(new CompanyScope);
+        static::addGlobalScope(new CompanyScope());
     }
 
     /**

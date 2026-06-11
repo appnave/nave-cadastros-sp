@@ -1,5 +1,5 @@
 {
-    "name": "bildvitta/sp-produto",
+    "name": "appnave/nave-cadastros-sp",
     "autoload": {
         "psr-4": {
             "BildVitta\\SpProduto\\": "src/"

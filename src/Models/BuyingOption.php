@@ -31,31 +31,31 @@ class BuyingOption extends BaseModel
     }
 
     public const WHEN_FLOW_SENT_LIST = [
-        'without_restriction' => 'Sem restrição',
+        'without_restriction'      => 'Sem restrição',
         'after_cadastral_analysis' => 'Após análise cadastral',
-        'after_credit_approval' => 'Após aprovação de crédito',
-        'after_bank_approval' => 'Após aprovação do banco',
+        'after_credit_approval'    => 'Após aprovação de crédito',
+        'after_bank_approval'      => 'Após aprovação do banco',
     ];
 
     public const WHEN_FLOW_VALIDATED_LIST = [
-        'without_restriction' => 'Sem restrição',
+        'without_restriction'      => 'Sem restrição',
         'after_cadastral_analysis' => 'Após análise cadastral',
-        'after_credit_approval' => 'Após aprovação de crédito',
-        'after_bank_approval' => 'Após aprovação do banco',
+        'after_credit_approval'    => 'Após aprovação de crédito',
+        'after_bank_approval'      => 'Após aprovação do banco',
     ];
 
     public const WHEN_MAKE_SALE_LIST = [
-        'without_restriction' => 'Sem restrição',
+        'without_restriction'      => 'Sem restrição',
         'after_cadastral_analysis' => 'Após análise cadastral',
-        'after_credit_approval' => 'Após aprovação de crédito',
-        'after_bank_approval' => 'Após aprovação do banco',
+        'after_credit_approval'    => 'Após aprovação de crédito',
+        'after_bank_approval'      => 'Após aprovação do banco',
     ];
 
     public const WHEN_RESERVE_UNIT_LIST = [
-        'without_restriction' => 'Sem restrição',
+        'without_restriction'      => 'Sem restrição',
         'after_cadastral_analysis' => 'Após análise cadastral',
-        'after_credit_approval' => 'Após aprovação de crédito',
-        'after_bank_approval' => 'Após aprovação do banco',
+        'after_credit_approval'    => 'Após aprovação de crédito',
+        'after_bank_approval'      => 'Após aprovação do banco',
     ];
 
     /**

@@ -24,14 +24,14 @@ trait BuyingOptionHelper
         BuyingOption::updateOrCreate([
             'uuid' => $message->uuid,
         ], [
-            'uuid' => $message->uuid,
-            'income_commitment' => $message->income_commitment,
-            'name' => $message->name,
-            'when_flow_sent' => $message->when_flow_sent,
+            'uuid'                => $message->uuid,
+            'income_commitment'   => $message->income_commitment,
+            'name'                => $message->name,
+            'when_flow_sent'      => $message->when_flow_sent,
             'when_flow_validated' => $message->when_flow_validated,
-            'when_make_sale' => $message->when_make_sale,
-            'when_reserve_unit' => $message->when_reserve_unit,
-            'hub_company_id' => $this->hubCompanyId($message),
+            'when_make_sale'      => $message->when_make_sale,
+            'when_reserve_unit'   => $message->when_reserve_unit,
+            'hub_company_id'      => $this->hubCompanyId($message),
         ]);
     }
 

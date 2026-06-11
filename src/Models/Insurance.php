@@ -54,7 +54,7 @@ class Insurance extends BaseModel
      */
     protected $casts = [
         'is_active' => 'boolean',
-        'rate' => 'double',
+        'rate'      => 'double',
     ];
 
     /**
