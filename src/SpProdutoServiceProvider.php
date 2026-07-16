@@ -84,6 +84,7 @@ class SpProdutoServiceProvider extends PackageServiceProvider
         'add_brand_id_on_real_estate_developments_table',
         'add_construction_address_type_on_real_estate_developments_table',
         'alter_table_typology_attributes_table',
+        'add_has_price_table_to_proposal_model_periodicities_table',
     ];
 
     protected array $commands = [
@@ -186,6 +187,7 @@ class SpProdutoServiceProvider extends PackageServiceProvider
                     $migrations[] = 'add_foreign_keys_to_sp_produto_proposal_model_real_estate_development_table';
                     $migrations[] = 'add_foreign_keys_to_sp_produto_proposal_model_typology_table';
                     $migrations[] = 'add_columns_on_proposal_model_periodicities_table';
+                    $migrations[] = 'add_has_price_table_to_proposal_model_periodicities_table';
                     break;
                 case 'stages':
                     $migrations[] = 'create_sp_produto_stages_table';
