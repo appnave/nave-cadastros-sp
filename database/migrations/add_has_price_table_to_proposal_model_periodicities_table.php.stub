@@ -18,7 +18,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('proposal_model_periodicities', function (Blueprint $table) {
+        Schema::table($this->tableName, function (Blueprint $table) {
             $table->boolean('has_price_table')->default(false)->after('editable');
         });
     }
@@ -28,7 +28,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('proposal_model_periodicities', function (Blueprint $table) {
+        Schema::table($this->tableName, function (Blueprint $table) {
             $table->dropColumn('has_price_table');
         });
     }
