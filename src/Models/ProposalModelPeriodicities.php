@@ -92,6 +92,7 @@ class ProposalModelPeriodicities extends BaseModel
         'add_on_type',
         'add_on_value',
         'editable',
+        'has_price_table',
         'due_date_type',
         'due_dates',
         'created_at',
@@ -108,6 +109,7 @@ class ProposalModelPeriodicities extends BaseModel
         'update_installments_quantity' => 'boolean',
         'pin_value'                    => 'boolean',
         'editable'                     => 'boolean',
+        'has_price_table'              => 'boolean',
     ];
 
     public function proposalModel(): BelongsTo
