@@ -43,7 +43,7 @@ trait ProposalModelHelper
                 'add_on_value'                 => $periodicity->add_on_value,
                 'proposal_model_id'            => $proposalModel->id,
                 'editable'                     => $periodicity->editable,
-                //'has_price_table'              => $periodicity->has_price_table,
+                'has_price_table'              => $periodicity->has_price_table,
                 'due_date_type'                => $periodicity->due_date_type,
                 'due_dates'                    => $periodicity->due_dates,
             ]);
