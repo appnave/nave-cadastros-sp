@@ -29,7 +29,6 @@ class ParameterFactory extends Factory
             'blueprint_definition_deadline' => $this->faker->date(),
             'commercialization_status'      => $this->faker->randomKey(Parameter::COMMERCIALIZATION_STATUS_LIST),
             'construction_over_in'          => $this->faker->date(),
-            'construction_prevision_in'     => $this->faker->date(),
             'construction_start_in'         => $this->faker->date(),
             'financial_transfer_deadline'   => $this->faker->date(),
             'financial_transfer_status'     => $this->faker->randomKey(Parameter::FINANCIAL_TRANSFER_STATUS_LIST),
