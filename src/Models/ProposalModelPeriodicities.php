@@ -58,7 +58,6 @@ class ProposalModelPeriodicities extends BaseModel
     public const DUE_DATE_TYPE_LIST = [
         // 'blueprint_definition_deadline' => 'Data limite para definição de planta',
         'construction_over_in' => 'Data de entrega da obra',
-        // 'construction_prevision_in' => 'Data de previsão de entrega da obra',
         // 'construction_start_in' => 'Data de início da obra',
         // 'financial_transfer_deadline' => 'Data limite para repasse',
         // 'launch_in' => 'Data de lançamento',

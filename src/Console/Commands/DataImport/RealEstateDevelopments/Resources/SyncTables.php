@@ -346,7 +346,6 @@ trait SyncTables
                 'deleted_at',
                 'blueprint_definition_deadline',
                 'construction_over_in',
-                'construction_prevision_in',
                 'construction_start_in',
                 'financial_transfer_deadline',
                 'hand_over_keys_in',
